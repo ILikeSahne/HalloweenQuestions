@@ -7,7 +7,7 @@ export default async function Home() {
   const { rows } = await sql`SELECT * from questions`;
 
   return (
-    <main style={{ display: "flex", alignItems: "center", justifyContent: "center", height: '100vh', width: '100vw',
+    <main style={{ display: "flex", alignItems: "center", justifyContent: "center", height: '100dvh', width: '100dvw',
                    backgroundColor: 'darkorange', color: "black", fontFamily: "Halloween Spooky"}}>
       <Cart rows={rows}/>
     </main>
