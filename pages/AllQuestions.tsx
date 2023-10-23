@@ -16,8 +16,6 @@ export async function getServerSideProps() {
 export default function AllQuestionsPage({
     questions
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-    console.log(questions);
-
     return(
         <SetupWrapper>
             <Questions questions={questions} />

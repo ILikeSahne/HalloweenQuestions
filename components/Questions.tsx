@@ -8,7 +8,7 @@ interface IQuestions {
 }
 
 export default function Questions({questions} : IQuestions) {
-  const [currentQuestion, setCurrentQuestion] = useState<number>(1);
+  const [currentQuestion, setCurrentQuestion] = useState<number>(0);
 
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexDirection: "column", width: '100%', height: '100%'}} >

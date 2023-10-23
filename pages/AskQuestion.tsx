@@ -23,17 +23,12 @@ export default function AskQuestionPage() {
       body: JSON.stringify({ question: question, goes_to: goesTo }),
     });
 
-    if(response.status === 201) {
-      setResponse("Frage wurde hinzugefügt");
-      setIsVisible(true);
+    setResponse("Frage wurde hinzugefügt");
+    setIsVisible(true);
 
-      setTimeout(() => {
-        setIsVisible(false);
-      }, 3000);
-    } else {
-      setResponse("ERROR");
-      console.log(response.status);
-    }
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 3000);
   }
   
   return (
