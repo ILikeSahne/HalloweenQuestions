@@ -15,6 +15,13 @@ export default function AskQuestionPage() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
+    setResponse("Frage wurde hinzugefügt");
+    setIsVisible(true);
+
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 3000);
+    
     const response = await fetch("/api/CreateQuestion", {
       method: "POST",
       headers: {
@@ -22,13 +29,6 @@ export default function AskQuestionPage() {
       },
       body: JSON.stringify({ question: question, goes_to: goesTo }),
     });
-
-    setResponse("Frage wurde hinzugefügt");
-    setIsVisible(true);
-
-    setTimeout(() => {
-      setIsVisible(false);
-    }, 3000);
   }
   
   return (
