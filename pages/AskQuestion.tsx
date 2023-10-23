@@ -33,9 +33,9 @@ export default function AskQuestionPage() {
   
   return (
     <SetupWrapper>
-      <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", fontSize: '50px', width: '100%', height: '100%', gap: '16px' }}>
+      <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", fontSize: '30px', width: '100%', height: '100%', maxWidth: '800px', gap: '16px', textAlign: "center" }}>
         <label htmlFor="question">Welche Assozialle Frage willst du stellen?</label>
-        <input style={{ fontSize: '50px', fontFamily: 'Halloween Spooky', backgroundColor: "black", border: "0px solid", borderRadius: "8px", textAlign: "center", width: '50%', color: "white", marginBottom: "0px"}}
+        <input style={{ fontSize: '30px', fontFamily: 'Halloween Spooky', backgroundColor: "black", border: "0px solid", borderRadius: "8px", textAlign: "center", width: '50%', color: "white", marginBottom: "0px"}}
             type="text"
             id="question"
             required
@@ -43,8 +43,8 @@ export default function AskQuestionPage() {
             onChange={(e) => setQuestion(e.target.value)}
           />
 
-        <label htmlFor="goes_to" style={{ marginTop: "64px" }}>An wen möchtest du die Frage stellen?</label>
-        <input style={{ fontSize: '50px', fontFamily: 'Halloween Spooky', backgroundColor: "black", border: "0px solid", borderRadius: "8px", textAlign: "center", width: '50%', color: "white" }}
+        <label htmlFor="goes_to" style={{ marginTop: "32px" }}>An wen möchtest du die Frage stellen?</label>
+        <input style={{ fontSize: '30px', fontFamily: 'Halloween Spooky', backgroundColor: "black", border: "0px solid", borderRadius: "8px", textAlign: "center", width: '50%', color: "white" }}
             type="text"
             id="goes_to"
             value={goesTo}
