@@ -22,6 +22,9 @@ export default function AskQuestionPage() {
       setIsVisible(false);
     }, 3000);
     
+    setQuestion("");
+    setGoesTo("");
+
     const response = await fetch("/api/CreateQuestion", {
       method: "POST",
       headers: {
