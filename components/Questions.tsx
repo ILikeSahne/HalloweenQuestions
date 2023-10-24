@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ITableQuestions from "../app/database/IQuestions";
+import { download, generateCsv, mkConfig } from "export-to-csv";
 
 interface IQuestions {
   questions: ITableQuestions[]
@@ -23,6 +24,25 @@ export default function Questions({questions} : IQuestions) {
       </div>
 
       <button style={{ fontSize: '50px', visibility: currentQuestion !== questions.length - 1 ? 'visible' : 'hidden' }} onClick={() => setCurrentQuestion(q => q + 1)}>Next</button>
+
+      <button style={{ fontSize: '50px' }} onClick={() => {
+        const csvConfig = mkConfig({ useKeysAsHeaders: true, filename: "AlleFragen" });
+
+        const data : any[] = [
+          
+        ]
+
+        questions.forEach(question => {
+          data.push({
+            "Frage": question.question,
+            "Geht an": question.goes_to
+          })
+        });
+
+        const csv = generateCsv(csvConfig)(data);
+
+        download(csvConfig)(csv)
+      }}>Export Questions</button>
     </div>
   );
 }
