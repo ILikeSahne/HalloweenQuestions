@@ -17,8 +17,14 @@ export default function AllQuestionsPage({
     questions
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
     return(
-        <SetupWrapper>
+        <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            color: "black",
+            fontFamily: "Halloween Spooky"}}>
             <Questions questions={questions} />
-        </SetupWrapper>
+        </div>
     );
 }
